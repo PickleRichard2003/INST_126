@@ -1,10 +1,23 @@
 import random
 
-#word storage
-word_bank = ['']
+# word storage
+word_bank = ['Youtube', 'Discord', 'Instragram', 'Twitter', 'Twitch', 'Snapchat', 'TikTok']
 
 # taking a random word from bank
 target_word = random.choice(word_bank)
+
+# create function to get the number of players
+
+def get_num_players():
+    while True:
+        try:
+            num_players = int(input("How many players are playing?: "))
+            if num_players >= 1:
+                return num_players
+            else:
+                print("Please enter a number greater than or equal to 1.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
 
 # Create 3 tries for player(s)
 
@@ -19,3 +32,23 @@ while chances > 0:
       else:
           wrong_guesses += 1
           print(f"Incorrect Guess. Try Again: ")
+
+# if the word is guessed, game ends with if statement
+
+if wrong_guesses == 0:
+    print(f"You have guessed the word!")
+    break
+
+# Taking user input 
+
+user_guess = input("Guess a letter or the secret word!: ").lower()
+
+
+
+
+
+
+
+
+
+
