@@ -1,0 +1,21 @@
+import random
+
+#word storage
+word_bank = ['']
+
+# taking a random word from bank
+target_word = random.choice(word_bank)
+
+# Create 3 tries for player(s)
+
+guesses = ''
+chances = 3
+
+while chances > 0:
+  wrong_guesses = 0
+    for character in target word:
+      if character in guesses:
+          print(f"Correct Guess!: {character}")
+      else:
+          wrong_guesses += 1
+          print(f"Incorrect Guess. Try Again: ")
