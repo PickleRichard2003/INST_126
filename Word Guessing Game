@@ -3,9 +3,9 @@ import random
 # word storage
 word_bank = ['Youtube', 'Discord', 'Instagram', 'Twitter', 'Twitch', 'Snapchat', 'TikTok']
 
-# function for taking a random word from bank
-def get_target_word():
-    return random.choice(word_bank).lower
+# define target word
+
+target_word = random.choice(word_bank).lower()
 
 # function to check letter
 def check_user_letter(letter, target_word):
@@ -28,13 +28,16 @@ def get_num_players():
         except ValueError:
             print("Invalid input. Please enter a number.")
             
+# taking user input 
+user_guess = input("Guess a letter or the secret word!: ").lower()
+
 # Create 3 tries for player(s) where the wrong guesses go up and chances go down when an incorrect guess is entered
 guesses = ''
 chances = 3
 
 while chances > 0:
     wrong_guesses = 0
-    for character in get_target_word:
+    for character in target_word:
         if character in guesses:
             print(f"Correct Guess!: {character}")
         else:
@@ -42,22 +45,32 @@ while chances > 0:
             chances -= 1
             print(f"Incorrect Guess. Try Again: ")
 
-# taking user input 
-    user_guess = input("Guess a letter or the secret word!: ").lower()
-
 # if statement for if the letter the user guessed is already guessed
-    if len(user_guess) == 1:
-        if user_guess in guesses:
-            print("You already guessed that letter.")
-            #remaining chances
-            print(f"Chances left: {chances}")
-        else:
-            # game over message if user runs out of tries
-            if chances == 0:
-                print(f"Sorry you have no more chances, the answer was '{get_target_word}'.")
+# Single letter guess
+    if len(user_guess) == 1:  
+                if user_guess in guesses:
+                    print("You already guessed that letter.")
+                else:
+                    occurrences = check_user_letter(user_guess, target_word)
+                    if occurrences > 0:
+                        print(f"Correct guess! The letter '{user_guess}' appears {occurrences} time(s) in the word.")
+                    else:
+                        print("Incorrect guess.")
+                        chances -= 1
+                    guesses += user_guess
+    # Whole word guess
+    elif len(user_guess) > 1:  
+                if check_word_guess(user_guess, target_word):
+                    print("Congratulations! You have guessed the word correctly!")
+                    break
+                else:
+                    print("Incorrect guess.")
+                    chances -= 1
 
 # if the word is guessed, game ends 
     if wrong_guesses == 0:
         print(f"You have guessed the word!")
         break
 
+
+    
