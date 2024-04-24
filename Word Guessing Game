@@ -27,13 +27,23 @@ def get_num_players():
                 print("Please enter a number greater than or equal to 1.")
         except ValueError:
             print("Invalid input. Please enter a number.")
-            
-# taking user input 
-user_guess = input("Guess a letter or the secret word!: ").lower()
+
+# fucntion to start the game
+
+def play_game():
+# use the functions defined earlier 
+    num_players = get_num_players()
+
+# initialize guesses and chances
+    guesses = ''
+    chances = 3
 
 # Create 3 tries for player(s) where the wrong guesses go up and chances go down when an incorrect guess is entered
+
 guesses = ''
 chances = 3
+target_word = get_target_word()
+user_guess = input("Guess a letter or the secret word!: ").lower()
 
 while chances > 0:
     wrong_guesses = 0
@@ -71,6 +81,7 @@ while chances > 0:
     if wrong_guesses == 0:
         print(f"You have guessed the word!")
         break
+
 
 
     
