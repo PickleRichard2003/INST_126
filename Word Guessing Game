@@ -1,13 +1,22 @@
 import random
 
 # word storage
-word_bank = ['Youtube', 'Discord', 'Instragram', 'Twitter', 'Twitch', 'Snapchat', 'TikTok']
+word_bank = ['Youtube', 'Discord', 'Instagram', 'Twitter', 'Twitch', 'Snapchat', 'TikTok']
 
-# taking a random word from bank
-target_word = random.choice(word_bank)
+# function for taking a random word from bank
+def get_target_word():
+    return random.choice(word_bank).lower
+
+# function to check letter
+def check_user_letter(letter, target_word):
+    occurences = target_word.count(letter)
+    return occurences
+
+# function to check word guess
+def check_word_guess(word_guess, target_word):
+    return word_guess.lower() == target_word
 
 # create function to get the number of players
-
 def get_num_players():
     while True:
         try:
@@ -18,37 +27,37 @@ def get_num_players():
                 print("Please enter a number greater than or equal to 1.")
         except ValueError:
             print("Invalid input. Please enter a number.")
-
-# Create 3 tries for player(s)
-
+            
+# Create 3 tries for player(s) where the wrong guesses go up and chances go down when an incorrect guess is entered
 guesses = ''
 chances = 3
 
 while chances > 0:
-  wrong_guesses = 0
-    for character in target word:
-      if character in guesses:
-          print(f"Correct Guess!: {character}")
-      else:
-          wrong_guesses += 1
-          print(f"Incorrect Guess. Try Again: ")
+    wrong_guesses = 0
+    for character in get_target_word:
+        if character in guesses:
+            print(f"Correct Guess!: {character}")
+        else:
+            wrong_guesses += 1
+            chances -= 1
+            print(f"Incorrect Guess. Try Again: ")
 
-# if the word is guessed, game ends with if statement
+# taking user input 
+    user_guess = input("Guess a letter or the secret word!: ").lower()
 
-if wrong_guesses == 0:
-    print(f"You have guessed the word!")
-    break
+# if statement for if the letter the user guessed is already guessed
+    if len(user_guess) == 1:
+        if user_guess in guesses:
+            print("You already guessed that letter.")
+            #remaining chances
+            print(f"Chances left: {chances}")
+        else:
+            # game over message if user runs out of tries
+            if chances == 0:
+                print(f"Sorry you have no more chances, the answer was '{get_target_word}'.")
 
-# Taking user input 
-
-user_guess = input("Guess a letter or the secret word!: ").lower()
-
-
-
-
-
-
-
-
-
+# if the word is guessed, game ends 
+    if wrong_guesses == 0:
+        print(f"You have guessed the word!")
+        break
 
