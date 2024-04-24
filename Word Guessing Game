@@ -42,11 +42,11 @@ def play_game():
 
 guesses = ''
 chances = 3
-target_word = get_target_word()
-user_guess = input("Guess a letter or the secret word!: ").lower()
+wrong_guesses = 0
 
-while chances > 0:
-    wrong_guesses = 0
+while chances > 0 and wrong_guesses > 0:
+    target_word = get_target_word()
+    user_guess = input("Guess a letter or the secret word!: ").lower()
     for character in target_word:
         if character in guesses:
             print(f"Correct Guess!: {character}")
