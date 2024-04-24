@@ -13,5 +13,5 @@ CANNOT:
     3. The game does not keep track of what letters or words have been guessed.
     4. Same word bank, no variety of words.
 
-RUNNING the code:
+
 
