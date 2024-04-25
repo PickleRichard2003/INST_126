@@ -14,7 +14,7 @@ CANNOT:
     4. Same word bank, no variety of words.
 RUNNING:
 
-    1. Clone the Repository by using the command git clone <https://github.com/PickleRichard2003/PickleRichard2003.git>
+    1. Clone the Repository by using the command git clone https://github.com/PickleRichard2003/PickleRichard2003.git
     2. Navigate to the using cd repository_name
     3. Run the code using python Word_Guessing_Game.py
 
