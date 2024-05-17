@@ -78,7 +78,7 @@ def play_game():
                 scores.append((player + 1, 'Lost'))
                 break
 
-    # Scoreboard?
+    # Scoreboard 
     print("\nFinal Scores:")
     for score in scores:
         print(f"Player {score[0]}: {score[1]}")
