@@ -1,14 +1,12 @@
-**NOTE THE CHANCES ARE ONLY TAKEN WHEN YOU GUESS A WORD (Anything greater than a letter. i.e. "asd" "ds") , NOT A LETTER**
-
 
 CAN:
 
-    1.Randomly Select a Word: It can randomly select a word from the word_bank.
-    2.Check Letter Guesses: It checks if the letter guessed by the player is present in the target word and provides feedback accordingly.
+    1.Selects a random word from the bank for player(s).
+    2.Letter guesses are checked and tells user how many times it appears in the secret word.
     3.Check Word Guesses: It allows players to guess the entire word and checks if it matches the target word.
     4.Handle Multiple Players: It prompts the user to input the number of players and initiates the game accordingly. 
-    5.Handle Incorrect Guesses: It tracks the number of incorrect guesses made by the player and decrements the available chances accordingly.
-    6.End the Game: It ends the game when the word is correctly guessed or when the player exhausts their chances.
+    5.Incorrect WORD guesses will cause chances to go down, while letter guesses don't. Anyting above 1 letter will count as a word.
+    6.Ends the game if both players used up all their chances. Scoreboard is only shown with 2+ players.
 CANNOT:
 
     1. Does not tell the player what made the guess wrong.
