@@ -1,4 +1,6 @@
 import random
+import pandas as pd
+import matplotlib.pyplot as plt
 
 # word storage
 word_bank = ['Youtube', 'Discord', 'Instagram', 'Twitter', 'Twitch', 'Snapchat', 'TikTok']
@@ -78,9 +80,27 @@ def play_game():
                 scores.append((player + 1, 'Lost'))
                 break
 
-    # Scoreboard 
+    # Scoreboard (pandas)
     print("\nFinal Scores:")
     for score in scores:
-        print(f"Player {score[0]}: {score[1]}")
+        df_scores = pd.DataFrame(scores, columns=['Player', 'Score'])
+        print(df_scores)
+
+    # when players lose set the lost result to 0 
+    df_scores['Score'].replace('Lost', 0, inplace=True)
+
+    # make the score a number
+    df_scores['Score'] = pd.to_numeric(df_scores['Score'])
+
+    # group players by their scores
+    df_grouped = df_scores.groupby('Player')['Score'].sum()
+
+    # plot graph
+    df_grouped.plot(kind='bar', xlabel='Player', ylabel='Score', title='Scoreboard')
+    
+    # no negative scores so set y axis to 0 as min (scores implement by 0.1 which is weird, but it will do for now)
+    plt.ylim(ymin=0)
+    plt.show()
+
 
 play_game()
