@@ -18,4 +18,8 @@ RUNNING:
     2. Navigate to the using cd repository_name
     3. Run the code using python Word_Guessing_Game.py
 
+Credits
 
+    1. Professor Scott
+    2. https://www.youtube.com/watch?v=M1t4RJ5XRHE
+    3. Idil Ibrahim
