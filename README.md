@@ -1,3 +1,6 @@
+**NOTE THE CHANCES ARE ONLY TAKEN WHEN YOU GUESS A WORD, NOT A LETTER**
+
+
 CAN:
 
     1.Randomly Select a Word: It can randomly select a word from the word_bank.
@@ -13,6 +16,7 @@ CANNOT:
     3. Same word bank, no variety of words.
 
 RUNNING:
+   
     1.Run the play game function.
     2.Enter the number of players that are playing.
     3.Each player will continue until tries are used up before moving to next player.
