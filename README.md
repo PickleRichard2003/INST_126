@@ -23,6 +23,6 @@ RUNNING:
 
 CREDITS:
 
-    1. Professor Scott
-    2. https://www.youtube.com/watch?v=M1t4RJ5XRHE
-    3. Idil Ibrahim
+    1. Professor Scott - Helped me get rid of reptitive code such as the get random word function and discussed future changes that needed to be made in word guessing game.
+    2. https://www.youtube.com/watch?v=M1t4RJ5XRHE - Got me started by allowing me to understand thought process and format of his word guessing game although it is not the same.
+    3. Idil Ibrahim - helped me a lot during pair programming by giving me advice and many different examples of tracking the remaining chances user has.
