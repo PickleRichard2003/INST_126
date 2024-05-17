@@ -6,7 +6,7 @@ CAN:
     3.Check Word Guesses: It allows players to guess the entire word and checks if it matches the target word.
     4.Handle Multiple Players: It prompts the user to input the number of players and initiates the game accordingly. 
     5.Incorrect WORD guesses will cause chances to go down, while letter guesses don't. Anyting above 1 letter will count as a word.
-    6.Ends the game if both players used up all their chances. Scoreboard is only shown with 2+ players.
+    6.Ends the game if player(s) used up all their chances. 
 CANNOT:
 
     1. Does not tell the player what made the guess wrong.
