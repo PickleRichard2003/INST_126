@@ -3,10 +3,6 @@ import random
 # word storage
 word_bank = ['Youtube', 'Discord', 'Instagram', 'Twitter', 'Twitch', 'Snapchat', 'TikTok']
 
-# function for getting random word from bank
-def get_target_word():
-    return random.choice(word_bank).lower()
-
 # function to check letter
 def check_user_letter(letter, target_word):
     occurences = target_word.count(letter)
